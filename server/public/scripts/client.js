@@ -3,7 +3,7 @@ console.log('client.js has been loaded');
 
 var app = angular.module('MessageApp', []);
 
-app.controller('MessageController', ['$http', function($http) {  //you'll see $http, $scope function($http, $scope)
+app.controller('MessageController', ['$http', function($http) {  
     console.log('Message Controller has been loaded');
     var self = this;
     self.messages = [];
@@ -17,8 +17,6 @@ app.controller('MessageController', ['$http', function($http) {  //you'll see $h
             self.messages = response.data;
         });
     }
-  
-    
 
     self.addMessage = function() {
         console.log(self.newMesage);

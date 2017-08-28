@@ -11,7 +11,7 @@ var messages = new Schema({
 
 var schema = mongoose.model('Messages', messages);
 
-// export our model
+
 module.exports = schema;
 
 
