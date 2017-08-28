@@ -1,19 +1,51 @@
 <!DOCTYPE html>
 
-    <head>
-           <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script type="text/javascript" src="/vendors/angular.min.js"></script>
-        <script type="text/javascript" src="/scripts/client.js"></script>
-        <script type="text/javascript" src="/scripts/controllers/something.controller.js"></script>
-        <script type="text/javascript" src="/scripts/services/something.service.js"></script>"
-        <link rel="stylesheet" href="/vendors/bootstrap.css" />
-    
-    </head>
-    <body ng-app="MyApp" ng-controller="MyController as vm">
-        
+<head>
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        
-    </body>
+    <script type="text/javascript" src="/vendors/angular.min.js"></script>
+    <!-- <script type="text/javascript" src="/vendors/bootstrap.js"></script> -->
+    <script type="text/javascript" src="/scripts/client.js"></script>
+    <link rel="stylesheet" href="/vendors/bootstrap.css" />
+
+</head>
+
+<body ng-app="MessageApp" ng-controller="MessageController as vm">
+    <h2>MEGA MESSAGE WILL DOMINATE ALL MESSAGE NEEDS</h2>
+
+    <section class="container">
+        <h1></h1>
+        <form class="col-md-12" ng-submit="vm.addMessage()">
+            <div class="form-group col-md-6">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" ng-model="vm.newMessage.name" placeholder="Name" />
+            </div>
+            <div class="form-group col-md-6">
+                <label for="message">Message</label>
+                <input type="text" class="form-control" ng-model="vm.newMessage.message" placeholder="Message" />
+            </div>
+
+            <div class="col-md-2">
+                <input class="btn btn-primary" type="submit" value="submit">
+            </div>
+        </form>
+        <hr>
+    </section>
+
+    <section class="row">
+        <div class="col-md-12 ">
+            <h2>Messages</h2>
+            <div ng-repeat="message in vm.messages.list" class="well col-md-12">
+                Name:
+                <div><input type="text" ng-model="message.name" /></div>
+                Message:
+                <div><input type="text" ng-model="message.message" /></div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
 </html>

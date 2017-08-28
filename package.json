@@ -1,0 +1,27 @@
+{
+  "name": "messages",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/b-bly/MEAN-messages.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/b-bly/MEAN-messages/issues"
+  },
+  "homepage": "https://github.com/b-bly/MEAN-messages#readme",
+  "dependencies": {
+    "angular": "^1.6.6",
+    "body-parser": "^1.17.2",
+    "bootstrap": "^3.3.7",
+    "express": "^4.15.4",
+    "mongoose": "^4.11.9"
+  }
+}
