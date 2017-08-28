@@ -9,20 +9,26 @@
     <!-- <script type="text/javascript" src="/vendors/bootstrap.js"></script> -->
     <script type="text/javascript" src="/scripts/client.js"></script>
     <link rel="stylesheet" href="/vendors/bootstrap.css" />
+    <link rel="stylesheet" href="/styles.css" />
 
 </head>
 
 <body ng-app="MessageApp" ng-controller="MessageController as vm">
-    <h2>MEGA MESSAGE WILL DOMINATE ALL MESSAGE NEEDS</h2>
+    <div id="background"></div>
+   
 
     <section class="container">
-        <h1></h1>
+        
         <form class="col-md-12" ng-submit="vm.addMessage()">
-            <div class="form-group col-md-6">
+                <h2>MEGA MESSAGE WILL DOMINATE ALL MESSAGE NEEDS</h2>
+            <div class="form-group col-md-5">
                 <label for="name">Name</label>
                 <input type="text" class="form-control" ng-model="vm.newMessage.name" placeholder="Name" />
             </div>
-            <div class="form-group col-md-6">
+
+
+
+            <div class="form-group col-md-5">
                 <label for="message">Message</label>
                 <input type="text" class="form-control" ng-model="vm.newMessage.message" placeholder="Message" />
             </div>
@@ -37,11 +43,11 @@
     <section class="row">
         <div class="col-md-12 ">
             <h2>Messages</h2>
-            <div ng-repeat="message in vm.messages.list" class="well col-md-12">
-                Name:
-                <div><input type="text" ng-model="message.name" /></div>
-                Message:
-                <div><input type="text" ng-model="message.message" /></div>
+            <div ng-repeat="message in vm.messages" class="well col-md-12">
+                
+                <div><strong>Name: </strong>{{ message.name }}</div>
+                
+                <div><strong>Message: </strong>{{ message.message }}</div>
             </div>
         </div>
     </section>

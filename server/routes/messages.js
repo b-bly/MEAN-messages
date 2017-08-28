@@ -16,4 +16,21 @@ router.get('/', function(req, res) {
     });
 });
 
+router.post('/', function (req, res) {
+ 
+    var message = new Messages(req.body);
+
+    message.save(function (err, data) {
+        if (err) {
+            console.log('save error: ', err);
+
+            res.sendStatus(500);
+        } else {
+            res.sendStatus(201);
+        }
+
+    });
+});
+
+
 module.exports = router;

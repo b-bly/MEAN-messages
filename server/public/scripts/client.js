@@ -20,18 +20,18 @@ app.controller('MessageController', ['$http', function($http) {  //you'll see $h
   
     
 
-    // self.postNewMessage = function() {
-    //     console.log(self.newMesage);
-    //     $http({
-    //         method: 'POST',
-    //         url: '/message',
-    //         data: self.newMessage
-    //     }).then(function(response) {
-    //         console.log(response);
-    //         self.getMessages();
+    self.addMessage = function() {
+        console.log(self.newMesage);
+        $http({
+            method: 'POST',
+            url: '/messages',
+            data: self.newMessage
+        }).then(function(response) {
+            console.log(response);
+            self.getMessages();
             
-    //     })
-    // }
+        })
+    }
 
     self.getMessages();
 
